@@ -106,11 +106,16 @@ document.addEventListener('DOMContentLoaded', function () {
   function setError(field, msg) {
     var el = document.getElementById('err-' + field);
     if (el) { el.textContent = msg; el.style.display = 'block'; }
+    var input = form.querySelector('[aria-describedby~="err-' + field + '"]');
+    if (input) input.setAttribute('aria-invalid', 'true');
   }
 
   function clearErrors() {
     document.querySelectorAll('.form-error').forEach(function (el) {
       el.textContent = '';
+    });
+    form.querySelectorAll('[aria-invalid]').forEach(function (el) {
+      el.removeAttribute('aria-invalid');
     });
   }
 });

@@ -56,15 +56,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!flagged.length) { el.style.display = 'none'; return; }
 
-    // Lead with the soonest non-overdue item (auto, Nov 18) and mention overdue separately
-    var parts = flagged.map(function (p) {
-      var pol = policyById(p.policyId);
-      var name = pol ? pol.plan : p.policyId;
-      if (p.status === 'Overdue') return name + ' premium of ' + fmtMoney(p.amount) + ' was due ' + fmtDate(p.dueDate) + ' and is overdue';
-      return name + ' premium of ' + fmtMoney(p.amount) + ' is due ' + fmtDate(p.dueDate);
+    var overdueCount = 0;
+    var dueCount = 0;
+    var total = 0;
+    flagged.forEach(function (p) {
+      if (p.status === 'Overdue') overdueCount++;
+      else dueCount++;
+      total += p.amount;
     });
 
-    el.innerHTML = '<strong>Payment reminder:</strong> ' + parts.join('. ') + '. ' +
+    var segments = [];
+    if (overdueCount) segments.push(overdueCount + (overdueCount === 1 ? ' payment overdue' : ' payments overdue'));
+    if (dueCount) segments.push(dueCount + ' due soon');
+
+    el.innerHTML = '<strong>Payment reminder:</strong> ' + segments.join(' · ') + ' — ' + fmtMoney(total) + ' total. ' +
       '<a href="payments.html">Review payments</a>';
     el.style.display = '';
   }

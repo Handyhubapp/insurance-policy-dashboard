@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var single = document.getElementById('claimContent');
   if (single && !document.getElementById('claimTimeline') && !document.getElementById('claimTracker')) {
     single.innerHTML =
-      '<p><a href="claims.html">Back to claims</a></p>' +
       '<div class="detail-hero"><div><p>' + claim.id + ' · ' + claim.type + '</p><h1>' + escHtml(claim.title) + '</h1></div>' + statusBadge(claim.status) + '</div>' +
       '<div id="claimTrackerBuilt"></div>' +
       '<section class="card"><h2>Summary</h2><p>' + escHtml(claim.summary) + '</p>' +
