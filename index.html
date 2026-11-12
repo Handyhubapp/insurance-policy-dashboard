@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Meridian Insurance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Primary">
+    <div class="sidebar__brand">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-name">Meridian<small>INSURANCE</small></span>
+    </div>
+    <nav class="sidebar__nav">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="policies.html">My Policies</a>
+      <a class="nav-link" href="payments.html">Payments</a>
+      <a class="nav-link" href="claims.html">Claims</a>
+      <a class="nav-link" href="file-claim.html">File a Claim</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="user-chip">
+        <span class="user-chip__avatar" aria-hidden="true">MT</span>
+        <span class="user-chip__text"><strong>Michael Thompson</strong><small>Policyholder since 2019</small></span>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="topbar__menu-btn" id="menuBtn" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">&#9776;</button>
+      <span class="topbar__title">Dashboard</span>
+      <div class="topbar__actions">
+        <span class="topbar__user">Michael Thompson</span>
+      </div>
+    </header>
+
+    <main class="page" id="main">
+      <div class="page__header">
+        <div>
+          <h1>Good evening, Michael</h1>
+          <p class="page__subtitle">Here is a quick look at your policies, payments and claims.</p>
+        </div>
+        <a class="btn btn--primary" href="file-claim.html">File a claim</a>
+      </div>
+
+      <div id="dueAlert"></div>
+
+      <section class="stats-grid" id="statsGrid" aria-label="Account summary"></section>
+
+      <div class="grid-2">
+        <div class="grid-main">
+          <section class="card">
+            <div class="card__header">
+              <h2>Coverage by policy type</h2>
+              <a href="policies.html">View policies</a>
+            </div>
+            <div class="card__body chart-flex">
+              <div class="donut-wrap" id="coverageChart" role="img" aria-label="Donut chart of total coverage by policy type"></div>
+              
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="card__header">
+              <h2>Recent claims</h2>
+              <a href="claims.html">All claims</a>
+            </div>
+            <div class="card__body card__body--flush">
+              <div id="recentClaims"></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="grid-side">
+          <section class="card">
+            <div class="card__header">
+              <h2>Upcoming payments</h2>
+              <a href="payments.html">Payments</a>
+            </div>
+            <div class="card__body card__body--flush">
+              <div id="upcomingPayments"></div>
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="card__header"><h2>Need a document?</h2></div>
+            <div class="card__body">
+              <p class="text-muted">Policy schedules, declarations and ID cards are stored on each policy's detail page.</p>
+              <a class="btn btn--outline btn--sm" href="policies.html">Go to my policies</a>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <footer class="page-footer">Meridian Insurance — demo portal. All policy and payment data shown here is sample data.</footer>
+    </main>
+  </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
