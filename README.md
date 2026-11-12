@@ -4,6 +4,8 @@
 
 A responsive customer portal built for the Aspire Systems / American Equity UI/UX assignment.
 
+**Designed and built by Rahul Bheemanathi** · UI/UX Designer & Front-End Developer
+
 The portal is presented for a fictional insurer, Meridian Insurance, with a single demo account holder, Michael Thompson. It demonstrates how a policyholder can view and manage policies, check premium payment status, and follow claims from a single, consistent interface.
 
 All data is mock data. There is no backend, account system, or live insurer connection. All policies, payments, and claims are defined in `js/data.js` and rendered in the browser.
