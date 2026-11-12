@@ -58,6 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
     '<p><a href="policies.html">Back to policies</a></p>';
 
   function kv(label, value) {
-    return '<div><dt>' + label + '</dt><dd>' + value + '</dd></div>';
+    return '<div class="kv-row"><dt>' + label + '</dt><dd>' + value + '</dd></div>';
   }
 });

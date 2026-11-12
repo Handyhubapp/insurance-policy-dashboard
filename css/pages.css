@@ -281,3 +281,46 @@ ol.tracker .tracker__step.is-current .tracker__dot { border-color: var(--color-p
 #dueAlert { background: var(--color-warning-bg); border: 1px solid var(--color-warning); color: var(--color-text); border-radius: var(--radius); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-5); }
 #dueAlert:empty { display: none; }
 #dueAlert a { font-weight: 650; }
+
+/* ---------- Spacing consistency pass ---------- */
+/* Claims list: gap between the filter chips and the first claim card.
+   Scoped to direct page children so the policies toolbar chips are unaffected */
+main.page > .filter-chips {
+  margin-bottom: var(--space-5);
+}
+
+/* Stacked top-level cards (e.g. the two payments cards) get the standard gap */
+main.page > .card + .card {
+  margin-top: var(--space-6);
+}
+
+/* File a claim: the form card has no card__header, so its body needs the
+   top padding a header would otherwise provide - first-row labels were
+   sitting flush against the card's top edge */
+.form-card .card__body {
+  padding-top: var(--space-6);
+}
+
+/* Detail pages: the JS-rendered .card sections are used without
+   card__header/card__body, so supply the standard card padding,
+   heading gap and stacking gap here */
+#detailContent .card,
+#claimContent .card {
+  padding: var(--space-6);
+  overflow-x: auto;
+}
+
+#detailContent .card + .card,
+#claimContent .card + .card {
+  margin-top: var(--space-6);
+}
+
+#detailContent .card > h2,
+#claimContent .card > h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* Claim tracker sits between the hero band and the first card */
+#claimContent #claimTrackerBuilt {
+  margin-bottom: var(--space-6);
+}

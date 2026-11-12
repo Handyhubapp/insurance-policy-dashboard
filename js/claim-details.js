@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var metaEl = document.getElementById('claimMeta');
   if (metaEl) {
     metaEl.innerHTML = '<dl class="kv-list">' +
-      '<div><dt>Claim number</dt><dd>' + claim.id + '</dd></div>' +
-      '<div><dt>Policy</dt><dd>' + claim.policyNumber + '</dd></div>' +
-      '<div><dt>Date of loss</dt><dd>' + fmtDate(claim.dateOfLoss) + '</dd></div>' +
-      '<div><dt>Filed</dt><dd>' + fmtDate(claim.filedDate) + '</dd></div>' +
-      '<div><dt>Amount claimed</dt><dd>' + fmtMoney(claim.claimed) + '</dd></div>' +
-      '<div><dt>Amount approved</dt><dd>' + (claim.approved === null ? 'Pending' : fmtMoney(claim.approved)) + '</dd></div></dl>';
+      '<div class="kv-row"><dt>Claim number</dt><dd>' + claim.id + '</dd></div>' +
+      '<div class="kv-row"><dt>Policy</dt><dd>' + claim.policyNumber + '</dd></div>' +
+      '<div class="kv-row"><dt>Date of loss</dt><dd>' + fmtDate(claim.dateOfLoss) + '</dd></div>' +
+      '<div class="kv-row"><dt>Filed</dt><dd>' + fmtDate(claim.filedDate) + '</dd></div>' +
+      '<div class="kv-row"><dt>Amount claimed</dt><dd>' + fmtMoney(claim.claimed) + '</dd></div>' +
+      '<div class="kv-row"><dt>Amount approved</dt><dd>' + (claim.approved === null ? 'Pending' : fmtMoney(claim.approved)) + '</dd></div></dl>';
   }
 
   renderTracker();
@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
       '<div class="detail-hero"><div><p>' + claim.id + ' · ' + claim.type + '</p><h1>' + escHtml(claim.title) + '</h1></div>' + statusBadge(claim.status) + '</div>' +
       '<div id="claimTrackerBuilt"></div>' +
       '<section class="card"><h2>Summary</h2><p>' + escHtml(claim.summary) + '</p>' +
-      '<dl class="kv-list"><div><dt>Amount claimed</dt><dd>' + fmtMoney(claim.claimed) + '</dd></div>' +
-      '<div><dt>Amount approved</dt><dd>' + (claim.approved === null ? 'Pending' : fmtMoney(claim.approved)) + '</dd></div>' +
-      '<div><dt>Date of loss</dt><dd>' + fmtDate(claim.dateOfLoss) + '</dd></div>' +
-      '<div><dt>Filed</dt><dd>' + fmtDate(claim.filedDate) + '</dd></div></dl></section>' +
+      '<dl class="kv-list"><div class="kv-row"><dt>Amount claimed</dt><dd>' + fmtMoney(claim.claimed) + '</dd></div>' +
+      '<div class="kv-row"><dt>Amount approved</dt><dd>' + (claim.approved === null ? 'Pending' : fmtMoney(claim.approved)) + '</dd></div>' +
+      '<div class="kv-row"><dt>Date of loss</dt><dd>' + fmtDate(claim.dateOfLoss) + '</dd></div>' +
+      '<div class="kv-row"><dt>Filed</dt><dd>' + fmtDate(claim.filedDate) + '</dd></div></dl></section>' +
       '<section class="card"><h2>Timeline</h2>' + timelineHtml() + '</section>' +
       '<section class="card"><h2>Documents</h2>' + docsHtml() + '</section>' +
       '<section class="card"><h2>Your adjuster</h2>' + adjusterHtml() + '</section>';

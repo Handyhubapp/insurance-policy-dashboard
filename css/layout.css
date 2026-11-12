@@ -139,6 +139,32 @@
   text-overflow: ellipsis;
 }
 
+/* Markup on all pages uses .user-chip__text with strong/small children;
+   stack them like .user-chip__name / .user-chip__plan instead of running inline */
+.user-chip__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.user-chip__text strong {
+  color: #fff;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-chip__text small {
+  font-size: var(--font-size-xs);
+  color: #9DB4C8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Dark overlay behind the mobile sidebar */
 .sidebar-overlay {
   display: none;

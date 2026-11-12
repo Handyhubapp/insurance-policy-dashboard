@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }).reduce(function (s, p) { return s + p.amount; }, 0);
 
     summary.innerHTML =
-      '<div class="stat-card"><p class="stat-card__label">Total due</p><p class="stat-card__value">' + fmtMoney(totalDue) + '</p></div>' +
-      '<div class="stat-card"><p class="stat-card__label">Overdue</p><p class="stat-card__value">' + fmtMoney(overdue) + '</p></div>' +
-      '<div class="stat-card"><p class="stat-card__label">Paid in 2026</p><p class="stat-card__value">' + fmtMoney(paidYtd) + '</p></div>';
+      '<div class="pay-summary__cell"><p class="pay-summary__label">Total due</p><p class="pay-summary__value">' + fmtMoney(totalDue) + '</p></div>' +
+      '<div class="pay-summary__cell"><p class="pay-summary__label">Overdue</p><p class="pay-summary__value">' + fmtMoney(overdue) + '</p></div>' +
+      '<div class="pay-summary__cell"><p class="pay-summary__label">Paid in 2026</p><p class="pay-summary__value">' + fmtMoney(paidYtd) + '</p></div>';
   }
 
   function renderDue() {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var rows = paid.map(function (p) {
       var pol = policyById(p.policyId);
       return '<tr><td>' + fmtDate(p.paidDate) + '</td><td>' + (pol ? escHtml(pol.plan) : p.policyId) + '</td>' +
-        '<td>' + fmtMoney(p.amount) + '</td><td>' + (p.method || '—') + '</td><td>' + statusBadge(p.status) + '</td></tr>';
+        '<td class="table__num">' + fmtMoney(p.amount) + '</td><td>' + (p.method || '—') + '</td><td>' + statusBadge(p.status) + '</td></tr>';
     }).join('');
     var tbody = historyTable.tagName === 'TBODY' ? historyTable : historyTable.querySelector('tbody');
     if (tbody) tbody.innerHTML = rows;
@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Also support inputs with those ids
     if (amtEl && amtEl.tagName === 'INPUT') amtEl.value = payment.amount.toFixed(2);
     if (!modal) return;
+    modal.hidden = false;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
   }
@@ -92,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!modal) return;
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
+    modal.hidden = true;
     currentPaymentId = null;
   }
 

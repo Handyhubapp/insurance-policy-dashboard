@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!latest.length) { el.innerHTML = '<p>No claims yet.</p>'; return; }
     el.innerHTML = latest.map(function (c) {
       return '<a class="list-row" href="claim-details.html?id=' + encodeURIComponent(c.id) + '">' +
-        '<span><strong>' + escHtml(c.title) + '</strong><br><small>' + c.id + ' · Filed ' + fmtDate(c.filedDate) + '</small></span>' +
-        '<span>' + fmtMoney(c.claimed) + ' ' + statusBadge(c.status) + '</span></a>';
+        '<span class="list-row__main"><strong>' + escHtml(c.title) + '</strong><br><small>' + c.id + ' · Filed ' + fmtDate(c.filedDate) + '</small></span>' +
+        '<span class="list-row__side">' + fmtMoney(c.claimed) + ' ' + statusBadge(c.status) + '</span></a>';
     }).join('');
   }
 
@@ -135,8 +135,8 @@ document.addEventListener('DOMContentLoaded', function () {
     el.innerHTML = upcoming.map(function (p) {
       var pol = policyById(p.policyId);
       return '<a class="list-row" href="payments.html">' +
-        '<span><strong>' + (pol ? escHtml(pol.plan) : p.policyId) + '</strong><br><small>Due ' + fmtDate(p.dueDate) + '</small></span>' +
-        '<span>' + fmtMoney(p.amount) + ' ' + statusBadge(p.status) + '</span></a>';
+        '<span class="list-row__main"><strong>' + (pol ? escHtml(pol.plan) : p.policyId) + '</strong><br><small>Due ' + fmtDate(p.dueDate) + '</small></span>' +
+        '<span class="list-row__side">' + fmtMoney(p.amount) + ' ' + statusBadge(p.status) + '</span></a>';
     }).join('');
   }
 });

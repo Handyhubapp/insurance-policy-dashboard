@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="policy-card__top"><span class="policy-card__type">' + p.type + '</span>' + statusBadge(p.status) + '</div>' +
         '<h3>' + escHtml(p.plan) + '</h3>' +
         '<p class="policy-card__number">' + p.number + '</p>' +
-        '<dl class="policy-card__meta"><div><dt>Coverage</dt><dd>' + fmtMoneyShort(p.coverage) + '</dd></div>' +
-        '<div><dt>Premium</dt><dd>' + premium + '</dd></div>' +
-        '<div><dt>' + due + '</dt><dd></dd></div></dl>' +
+        '<dl class="policy-card__meta"><div class="meta-row"><dt>Coverage</dt><dd>' + fmtMoneyShort(p.coverage) + '</dd></div>' +
+        '<div class="meta-row"><dt>Premium</dt><dd>' + premium + '</dd></div>' +
+        '<div class="meta-row"><dt>' + due + '</dt><dd></dd></div></dl>' +
         '<span class="policy-card__link">View details</span></article>';
     }).join('');
 
