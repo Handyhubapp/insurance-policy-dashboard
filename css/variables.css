@@ -1,0 +1,72 @@
+/* Meridian Insurance - design tokens */
+:root {
+  /* Brand */
+  --color-primary: #0F4C81;
+  --color-primary-dark: #0B3556;
+  --color-primary-light: #E8EFF6;
+  --color-accent: #0E7C7B;
+  --color-accent-dark: #0A5E5D;
+  --color-accent-light: #E6F2F2;
+
+  /* Status */
+  --color-success: #1E7D46;
+  --color-success-bg: #EAF4EE;
+  --color-warning: #B7791F;
+  --color-warning-bg: #FBF3E2;
+  --color-danger: #B3261E;
+  --color-danger-bg: #FBEAEA;
+  --color-info: #0F4C81;
+  --color-info-bg: #E8EFF6;
+
+  /* Neutrals */
+  --color-bg: #F4F6F8;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F8FAFB;
+  --color-border: #DCE3EA;
+  --color-border-strong: #C3CEDA;
+  --color-text: #1C2733;
+  --color-text-muted: #5A6B7B;
+  --color-text-faint: #8296A8;
+
+  /* Type */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.375rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-3xl: 2.125rem;
+  --line-height: 1.5;
+  --line-height-tight: 1.25;
+
+  /* Spacing - 4 / 8 scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(11, 53, 86, 0.06), 0 1px 3px rgba(11, 53, 86, 0.05);
+  --shadow-md: 0 4px 12px rgba(11, 53, 86, 0.08), 0 2px 4px rgba(11, 53, 86, 0.05);
+  --shadow-lg: 0 12px 32px rgba(11, 53, 86, 0.14), 0 4px 8px rgba(11, 53, 86, 0.06);
+
+  /* Layout */
+  --sidebar-width: 248px;
+  --topbar-height: 60px;
+  --content-max: 1180px;
+
+  --transition: 160ms ease;
+}
