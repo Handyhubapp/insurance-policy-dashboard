@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!container) return;
 
   var params = new URLSearchParams(window.location.search);
-  var id = params.get('id');
+  var id = params.get('id') || 'health';
   var policy = id ? policyById(id) : null;
 
   if (!policy) {

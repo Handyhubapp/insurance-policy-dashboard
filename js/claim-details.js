@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   var params = new URLSearchParams(window.location.search);
-  var id = params.get('id');
+  var id = params.get('id') || 'CLM-2026-0417';
   var claim = null;
   CLAIMS.forEach(function (c) { if (c.id === id) claim = c; });
 
