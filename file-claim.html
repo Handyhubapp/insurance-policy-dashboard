@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File a Claim — Meridian Insurance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Primary">
+    <div class="sidebar__brand">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-name">Meridian<small>INSURANCE</small></span>
+    </div>
+    <nav class="sidebar__nav">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="policies.html">My Policies</a>
+      <a class="nav-link" href="payments.html">Payments</a>
+      <a class="nav-link" href="claims.html">Claims</a>
+      <a class="nav-link" href="file-claim.html">File a Claim</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="user-chip">
+        <span class="user-chip__avatar" aria-hidden="true">MT</span>
+        <span class="user-chip__text"><strong>Michael Thompson</strong><small>Policyholder since 2019</small></span>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="topbar__menu-btn" id="menuBtn" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">&#9776;</button>
+      <span class="topbar__title">File a Claim</span>
+      <div class="topbar__actions"><span class="topbar__user">Michael Thompson</span></div>
+    </header>
+
+    <main class="page" id="main">
+      <div class="page__header">
+        <div>
+          <h1>File a Claim</h1>
+          <p class="page__subtitle">Tell us what happened. An adjuster is usually assigned within one business day.</p>
+        </div>
+      </div>
+
+      <section class="card form-card">
+        <div class="card__body">
+          <form id="claimForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="claimPolicy">Policy</label>
+                <select class="select" id="claimPolicy" name="policy" aria-describedby="err-policy">
+                  <option value="">Select a policy</option>
+                </select>
+                <p class="form-error" id="err-policy" role="alert" hidden></p>
+              </div>
+              <div class="form-group">
+                <label for="claimType">Type of loss</label>
+                <select class="select" id="claimType" name="type" aria-describedby="err-type">
+                  <option value="">Select a type</option>
+                  <option>Collision</option>
+                  <option>Water damage</option>
+                  <option>Fire or smoke</option>
+                  <option>Theft</option>
+                  <option>Medical expense</option>
+                  <option>Storm or hail damage</option>
+                  <option>Other</option>
+                </select>
+                <p class="form-error" id="err-type" role="alert" hidden></p>
+              </div>
+              <div class="form-group">
+                <label for="claimDate">Date of loss</label>
+                <input class="input" type="date" id="claimDate" name="date" aria-describedby="err-date">
+                <p class="form-error" id="err-date" role="alert" hidden></p>
+              </div>
+              <div class="form-group">
+                <label for="claimAmount">Estimated amount (USD)</label>
+                <input class="input" type="number" id="claimAmount" name="amount" min="1" step="0.01" placeholder="e.g. 2500" aria-describedby="err-amount">
+                <p class="form-error" id="err-amount" role="alert" hidden></p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="claimDesc">What happened?</label>
+              <textarea class="input" id="claimDesc" name="description" rows="5" placeholder="Describe the incident — where it happened, what was damaged, and whether anyone was hurt." aria-describedby="err-description descHint"></textarea>
+              <p class="form-hint" id="descHint">Please add at least a sentence or two so the adjuster can start right away.</p>
+              <p class="form-error" id="err-description" role="alert" hidden></p>
+            </div>
+
+            <div class="form-group">
+              <label for="claimDocs">Supporting documents (optional)</label>
+              <input class="input" type="file" id="claimDocs" name="documents" multiple>
+              <p class="form-hint">Photos, repair estimates, police reports or invoices. Files are not uploaded in this demo.</p>
+            </div>
+
+            <div class="form-actions">
+              <a class="btn btn--ghost" href="claims.html">Cancel</a>
+              <button class="btn btn--primary" type="submit">Submit claim</button>
+            </div>
+          </form>
+
+          <div class="success-panel" id="successPanel" hidden>
+            <h2>Claim submitted</h2>
+            <p>Your claim reference is <strong id="claimRef"></strong>.</p>
+            <p class="text-muted" id="successSummary"></p>
+            <p class="text-muted">An adjuster will review the details and contact you within one business day. You can follow the claim from the Claims page in a live version of this portal.</p>
+            <a class="btn btn--primary" href="claims.html">Go to my claims</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer">Meridian Insurance — demo portal. Submitting this form does not file a real claim.</footer>
+    </main>
+  </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/file-claim.js"></script>
+</body>
+</html>

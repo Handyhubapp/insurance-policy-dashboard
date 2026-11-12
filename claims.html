@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claims — Meridian Insurance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Primary">
+    <div class="sidebar__brand">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-name">Meridian<small>INSURANCE</small></span>
+    </div>
+    <nav class="sidebar__nav">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="policies.html">My Policies</a>
+      <a class="nav-link" href="payments.html">Payments</a>
+      <a class="nav-link" href="claims.html">Claims</a>
+      <a class="nav-link" href="file-claim.html">File a Claim</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="user-chip">
+        <span class="user-chip__avatar" aria-hidden="true">MT</span>
+        <span class="user-chip__text"><strong>Michael Thompson</strong><small>Policyholder since 2019</small></span>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="topbar__menu-btn" id="menuBtn" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">&#9776;</button>
+      <span class="topbar__title">Claims</span>
+      <div class="topbar__actions"><span class="topbar__user">Michael Thompson</span></div>
+    </header>
+
+    <main class="page" id="main">
+      <div class="page__header">
+        <div>
+          <h1>Claims</h1>
+          <p class="page__subtitle">Follow every claim from filing to decision. Select a claim to see its timeline.</p>
+        </div>
+        <a class="btn btn--primary" href="file-claim.html">File a claim</a>
+      </div>
+
+      <div class="filter-chips" role="group" aria-label="Filter claims by status">
+        <button class="chip is-active" type="button" data-status="All">All</button>
+        <button class="chip" type="button" data-status="In Review">In Review</button>
+        <button class="chip" type="button" data-status="Approved">Approved</button>
+        <button class="chip" type="button" data-status="Paid">Paid</button>
+        <button class="chip" type="button" data-status="Closed">Closed</button>
+      </div>
+
+      <section id="claimsList" aria-label="Claims list"></section>
+
+      <footer class="page-footer">Meridian Insurance — demo portal. All claim data shown here is sample data.</footer>
+    </main>
+  </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/claims.js"></script>
+</body>
+</html>
