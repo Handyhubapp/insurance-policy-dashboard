@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payments — Meridian Insurance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Primary">
+    <div class="sidebar__brand">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-name">Meridian<small>INSURANCE</small></span>
+    </div>
+    <nav class="sidebar__nav">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="policies.html">My Policies</a>
+      <a class="nav-link" href="payments.html">Payments</a>
+      <a class="nav-link" href="claims.html">Claims</a>
+      <a class="nav-link" href="file-claim.html">File a Claim</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="user-chip">
+        <span class="user-chip__avatar" aria-hidden="true">MT</span>
+        <span class="user-chip__text"><strong>Michael Thompson</strong><small>Policyholder since 2019</small></span>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="topbar__menu-btn" id="menuBtn" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">&#9776;</button>
+      <span class="topbar__title">Payments</span>
+      <div class="topbar__actions"><span class="topbar__user">Michael Thompson</span></div>
+    </header>
+
+    <main class="page" id="main">
+      <div class="page__header">
+        <div>
+          <h1>Premium Payments</h1>
+          <p class="page__subtitle">What is due, what is overdue, and what you have already paid this year.</p>
+        </div>
+      </div>
+
+      <section class="pay-summary" id="paySummary" aria-label="Payment summary"></section>
+
+      <section class="card">
+        <div class="card__header"><h2>Due and overdue</h2></div>
+        <div class="card__body card__body--flush">
+          <div id="dueList"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header"><h2>Payment history</h2></div>
+        <div class="table-wrap">
+          <table class="table" id="historyTable">
+            <thead>
+              <tr><th scope="col">Paid on</th><th scope="col">Policy</th><th scope="col" class="table__num">Amount</th><th scope="col">Method</th><th scope="col">Status</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="page-footer">Meridian Insurance — demo portal. Payments on this page are simulated and do not charge any account.</footer>
+    </main>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="payModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="payModalTitle">
+    <div class="modal__header">
+      <h2 id="payModalTitle">Pay premium</h2>
+      <button class="icon-btn modal-close" type="button" aria-label="Close" data-close>&times;</button>
+    </div>
+    <div class="modal__body">
+      <dl class="kv-list">
+        <div class="kv-row"><dt>Policy</dt><dd id="payPolicy">—</dd></div>
+        <div class="kv-row"><dt>Due date</dt><dd id="payDue">—</dd></div>
+        <div class="kv-row"><dt>Amount due</dt><dd class="amount" id="payAmount">—</dd></div>
+        <div class="kv-row"><dt>Paying with</dt><dd>Visa ending in 4421</dd></div>
+      </dl>
+      <p class="text-muted">This is a demo payment. Confirming will mark the premium as paid on this page only.</p>
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn--ghost" type="button" id="cancelPay" data-close>Cancel</button>
+      <button class="btn btn--primary" type="button" id="confirmPay">Confirm payment</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/payments.js"></script>
+</body>
+</html>
