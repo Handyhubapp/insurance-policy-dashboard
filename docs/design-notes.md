@@ -42,7 +42,7 @@ Claim Details includes a horizontal progress tracker showing the stages a claim 
 
 ## Design Tokens Summary
 
-All tokens are defined as CSS custom properties in `css/styles.css` and applied consistently across pages.
+All tokens are defined as CSS custom properties in `css/variables.css` and applied consistently across pages.
 
 ### Colour
 
@@ -51,14 +51,14 @@ All tokens are defined as CSS custom properties in `css/styles.css` and applied 
 | Primary navy | `#0F4C81` | Primary buttons, links, active states, headings accent |
 | Dark navy (sidebar) | `#0B3556` | Sidebar background, footer |
 | Teal accent | `#0E7C7B` | Secondary highlights, progress tracker, informational accents |
-| Success / Paid | `#1B7A43` | Paid, Settled, Complete status |
-| Warning / Due | `#9A6700` | Due, In Review, Pending status |
-| Danger / Overdue | `#B42318` | Overdue, Action Required status |
-| Text primary | `#1A2B3C` | Body text and headings |
-| Text secondary | `#5A6B7C` | Supporting text, table captions, metadata |
+| Success / Paid | `#1E7D46` | Paid, Settled, Complete status |
+| Warning / Due | `#B7791F` | Due, In Review, Pending status |
+| Danger / Overdue | `#B3261E` | Overdue, Action Required status |
+| Text primary | `#1C2733` | Body text and headings |
+| Text secondary | `#5A6B7B` | Supporting text, table captions, metadata |
 | Background | `#F4F6F8` | Page background |
 | Surface | `#FFFFFF` | Cards, tables, modals |
-| Border | `#D9E1E8` | Card and table borders, dividers |
+| Border | `#DCE3EA` | Card and table borders, dividers |
 
 Status colours are always paired with the badge text label described above.
 
@@ -69,10 +69,10 @@ Font: Inter, with a system font stack as fallback.
 | Style | Size | Use |
 |---|---|---|
 | Heading 1 | 28px | Page title |
-| Heading 2 | 20px | Section and card headings |
-| Heading 3 | 16px | Sub-sections |
-| Body | 15–16px | Primary reading text |
-| Small | 13–14px | Table metadata, captions, helper text |
+| Heading 2 | 22px | Section and card headings |
+| Heading 3 | 18px | Sub-sections |
+| Body | 15px | Primary reading text |
+| Small | 13px | Table metadata, captions, helper text |
 
 Line height is set at 1.5 for body text to support readability at small sizes.
 
@@ -80,11 +80,12 @@ Line height is set at 1.5 for body text to support readability at small sizes.
 
 | Token | Value | Use |
 |---|---|---|
-| Spacing scale | 4px / 8px base — 4, 8, 12, 16, 24, 32, 48 | All padding, margins, and gaps derive from this scale |
-| Radius — small | 8px | Buttons, inputs, badges, table containers |
+| Spacing scale | 4px / 8px base — 4, 8, 12, 16, 20, 24, 32, 40, 48 | All padding, margins, and gaps derive from this scale |
+| Radius — small | 6px | Badges, small elements |
+| Radius — default | 8px | Buttons, inputs, table containers |
 | Radius — large | 12px | Cards, modals |
-| Content max width | 1200px | Main content area beside the sidebar |
-| Sidebar width | 240px | Desktop navigation |
+| Content max width | 1180px | Main content area beside the sidebar |
+| Sidebar width | 248px | Desktop navigation |
 
 ## Information Architecture
 

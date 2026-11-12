@@ -12,7 +12,7 @@ All data is mock data. There is no backend, account system, or live insurer conn
 
 | Requirement | Implementation |
 |---|---|
-| View and manage policies | Policies page (`policies.html`) — searchable, filterable, and sortable policy list. Filter by policy type and status, search by policy number or type, and sort by premium, coverage, or renewal date. Each row links to a full details view. |
+| View and manage policies | Policies page (`policies.html`) — searchable, filterable, and sortable policy list. Filter by policy type and status, search by policy number or type, and sort by premium, coverage, or renewal date. Each policy card links to a full details view. |
 | Track policy details | Policy Details page (`policy-details.html`) — coverage summary, insured details, premium and renewal information, coverage limits, exclusions, and related documents for a single policy, selected from the Policies list. |
 | Monitor premium payment status | Payments page (`payments.html`) — payment history and upcoming premiums grouped by status: Paid, Due, and Overdue. Overdue and due items are highlighted with text labels as well as colour. The Pay Now flow opens a confirmation modal and updates the payment status in the interface on confirmation. |
 | Access claim information | Claims page (`claims.html`) — list of claims with status, amount, and date filed. Claim Details page (`claim-details.html`) — full claim summary with a step-by-step progress tracker showing the current stage. File a Claim page (`file-claim.html`) — structured form with inline validation to start a new claim. |
@@ -59,10 +59,21 @@ insurance-policy-dashboard/
 ├── claim-details.html      # Claim Details with progress tracker
 ├── file-claim.html         # File a Claim form
 ├── css/
-│   └── styles.css          # Design tokens, layout, and components
+│   ├── variables.css       # Design tokens — colours, type, spacing, radius
+│   ├── base.css            # Reset and base typography
+│   ├── layout.css          # App shell — sidebar, topbar, content area
+│   ├── components.css      # Cards, buttons, badges, tables, forms, modal
+│   └── pages.css           # Page-specific styles
 ├── js/
 │   ├── data.js             # Mock data — policies, payments, claims
-│   └── app.js              # Rendering, interactions, and validation
+│   ├── app.js              # Shared shell — nav state, sidebar toggle, helpers
+│   ├── dashboard.js        # Dashboard page
+│   ├── policies.js         # My Policies page
+│   ├── policy-details.js   # Policy Details page
+│   ├── payments.js         # Payments page
+│   ├── claims.js           # Claims page
+│   ├── claim-details.js    # Claim Details page
+│   └── file-claim.js       # File a Claim page
 ├── docs/
 │   └── design-notes.md     # UX approach, tokens, and IA decisions
 └── README.md

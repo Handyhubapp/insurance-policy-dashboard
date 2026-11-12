@@ -63,6 +63,15 @@ document.addEventListener('DOMContentLoaded', function () {
       a.classList.add('is-active');
       a.setAttribute('aria-current', 'page');
     }
+    // Detail pages highlight their parent list page in the nav
+    if (page === 'policy-details.html' && href === 'policies.html') {
+      a.classList.add('is-active');
+      a.setAttribute('aria-current', 'page');
+    }
+    if (page === 'claim-details.html' && href === 'claims.html') {
+      a.classList.add('is-active');
+      a.setAttribute('aria-current', 'page');
+    }
     // Dashboard lives in index.html on some builds
     if ((page === 'index.html' || page === '') && (href === 'dashboard.html')) {
       a.classList.add('is-active');
